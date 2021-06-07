@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+const Sing =(props)=>{
+  return(
+    <div>
+       <h1>I am Singing</h1>
+       <Dance value={props.value}/>
     </div>
-  );
+  )
+}
+
+
+const Dance =(props)=>{
+  return(
+    <div>
+       <h1>I am Dancing and my score is {props.value}</h1>
+
+    </div>
+  )
+}
+
+
+
+const App =()=>{
+  const [score, setScore] = useState(100)
+  return(
+    <div>
+       <h1>I am App</h1>
+       <Sing value={score}/>
+    </div>
+  )
 }
 
 export default App;
